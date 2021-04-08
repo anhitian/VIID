@@ -8,6 +8,9 @@ plugins {
     id "com.gorylenko.gradle-git-properties"
 }
 
+wrapper {
+    gradleVersion = "6.8.3"
+}
 
 allprojects {
     version '0.0.1'
