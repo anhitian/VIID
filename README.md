@@ -2,7 +2,7 @@
  <img src="https://img.shields.io/badge/VIID-1.0-inactive.svg" alt="Build Status">
  <img src="https://img.shields.io/badge/Spring%20Cloud-Hoxton.SR10-blue.svg" alt="Coverage Status">
  <img src="https://img.shields.io/badge/Spring%20Boot-2.3.9-blue.svg" alt="Downloads">
- <img src="https://img.shields.io/github/license/dev-heqian/viid"/>
+ <img src="https://img.shields.io/github/license/dev-heqian/VIID"/>
 </p>
 
 # 系统说明
