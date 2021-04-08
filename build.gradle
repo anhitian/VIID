@@ -1,0 +1,137 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+    id 'java'
+    id "com.google.cloud.tools.jib"
+    id "com.gorylenko.gradle-git-properties"
+}
+
+
+allprojects {
+    version '0.0.1'
+    group 'com.viid'
+    description 'Video and Image Information Database'
+
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        mavenLocal()
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://oss.sonatype.org/content/groups/public/" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+        jcenter()
+        google()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencyManagement{
+        imports {
+            mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
+        }
+
+        dependencies {
+            dependency "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
+            dependency "com.baomidou:mybatis-plus-generator:${mybatisPlusVersion}"
+            dependency "org.redisson:redisson-spring-boot-starter:${redissonVersion}"
+            dependency "org.redisson:redisson:${redissonVersion}"
+            dependency "cn.hutool:hutool-all:${hutoolVersion}"
+            dependency "com.google.guava:guava:${guavaVersion}"
+            dependency "commons-io:commons-io:${commonsIoVersion}"
+            dependency "org.apache.commons:commons-lang3:${commonsLang3Version}"
+            dependency "org.apache.commons:commons-collections4:${commonsCollections4Version}"
+            dependency "commons-codec:commons-codec:${commonsCodecVersion}"
+            dependency "org.apache.httpcomponents:httpclient:${httpclientVersion}"
+            dependency "com.squareup.okhttp3:okhttp:${okhttpVersion}"
+            dependency "io.minio:minio:${minioVersion}"
+        }
+    }
+
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
+
+}
+
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'jacoco'
+    apply plugin: 'idea'
+
+    sourceCompatibility = '11'
+
+
+    repositories {
+        mavenLocal()
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://oss.sonatype.org/content/groups/public/" }
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+        jcenter()
+        google()
+        maven { url 'https://jitpack.io' }
+    }
+
+    configurations {
+        providedRuntime
+        implementation.exclude module: "spring-boot-starter-tomcat"
+    }
+
+    dependencies {
+
+        // instead of tomcat
+        implementation 'org.springframework.boot:spring-boot-starter-undertow'
+
+        compileOnly "org.projectlombok:lombok:${lombokVersion}"
+        annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+        testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+        testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+
+        testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
+        testImplementation "org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}"
+        testImplementation "org.junit.platform:junit-platform-launcher:${junitPlatformLauncherVersion}"
+    }
+
+    test {
+        useJUnitPlatform()
+        ignoreFailures = true
+    }
+
+
+    gitProperties {
+        failOnNoGitDirectory = false
+        keys = ["git.branch", "git.commit.id.abbrev", "git.commit.id.describe"]
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled true
+            csv.enabled true
+            html.enabled true
+
+            xml.destination file("${buildDir}/reports/jacoco/jacocoReport/jacocoXml.xml")
+            csv.destination file("${buildDir}/reports/jacoco/jacocoReport/jacocoCsv.csv")
+            html.destination file("${buildDir}/reports/jacoco/jacocoReport/jacocoHtml")
+        }
+    }
+
+    tasks.check.dependsOn jacocoTestReport
+
+    def env = System.getProperty("env") ?: "dev"
+    processResources {
+        filter (ReplaceTokens, tokens: [env: env])
+    }
+}
