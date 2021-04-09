@@ -17,6 +17,7 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -31,6 +32,7 @@ import java.time.LocalDateTime;
  **/
 
 @Data
+@JsonRootName("SubImageInfoObject")
 public class SubImageInfo {
 
     /**

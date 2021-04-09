@@ -6,6 +6,7 @@ plugins {
     id 'java'
     id "com.google.cloud.tools.jib"
     id "com.gorylenko.gradle-git-properties"
+    id 'com.github.shalousun.smart-doc'
 }
 
 wrapper {
@@ -68,9 +69,15 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'jacoco'
     apply plugin: 'idea'
-
+    apply plugin: 'com.github.shalousun.smart-doc'
     sourceCompatibility = '11'
 
+    smartdoc {
+        //
+        configFile = file("src/main/resources/smart-doc.json")
+        // exclude artifact
+
+    }
 
     repositories {
         mavenLocal()

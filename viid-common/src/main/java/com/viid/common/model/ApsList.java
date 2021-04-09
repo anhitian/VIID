@@ -17,27 +17,29 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
+import java.util.List;
+
 /**
- * KeepAliveObject
+ * ApsList
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/10
  * @since 0.1.0
  **/
-
 @Data
-public class KeepAliveObject {
+@JsonRootName("APSListObject")
+public class ApsList {
 
     /**
-     * 保活信息对象
+     * 采集系统集合
      *
-     * @required
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "KeepAlive")
-    private KeepAlive keepAlive;
+    @JsonProperty(value = "APSObject")
+    private List<Aps> aps;
 }

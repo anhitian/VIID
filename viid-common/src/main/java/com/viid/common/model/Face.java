@@ -17,6 +17,7 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -30,6 +31,7 @@ import java.util.Date;
  **/
 
 @Data
+@JsonRootName("FaceObject")
 public class Face {
 
     /**

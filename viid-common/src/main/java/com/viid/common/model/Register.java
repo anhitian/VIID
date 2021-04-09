@@ -17,6 +17,7 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
 /**
@@ -27,7 +28,9 @@ import lombok.Data;
  * @date 2021/4/9
  * @since 0.1.0
  **/
+
 @Data
+@JsonRootName("RegisterObject")
 public class Register {
 
     /**

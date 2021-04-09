@@ -37,6 +37,6 @@ public class ResponseStatusObject {
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "ResponseStatus")
+    @JsonProperty(value = "ResponseStatusObject")
     private ResponseStatus responseStatus;
 }

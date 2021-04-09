@@ -17,26 +17,31 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
+import java.util.List;
+
 /**
- * UnRegisterObject
+ * ApsStatusList
+ * 采集系统集合对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/10
  * @since 0.1.0
  **/
+
 @Data
-public class UnRegisterObject {
+@JsonRootName("APSStatusListObject")
+public class ApsStatusList {
 
     /**
-     * 注销信息对象
+     * 采集系统状态集合
      *
-     * @required
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "UnRegister")
-    private UnRegister unRegister;
+    @JsonProperty(value = "APSStatusObject")
+    private List<ApsStatus> apsStatuses;
 }

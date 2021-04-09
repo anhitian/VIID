@@ -17,26 +17,31 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
+import java.util.List;
+
 /**
- * RegisterObject
+ * ApeStatusList
+ * 采集设备状态集合对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/10
  * @since 0.1.0
  **/
+
 @Data
-public class RegisterObject {
+@JsonRootName("APEStatusListObject")
+public class ApeStatusList {
 
     /**
-     * 注册信息对象
+     * 采集设备状态集合
      *
-     * @required
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "Register")
-    private Register register;
+    @JsonProperty(value = "APEStatusObject")
+    private List<ApeStatus> apeStatuses;
 }

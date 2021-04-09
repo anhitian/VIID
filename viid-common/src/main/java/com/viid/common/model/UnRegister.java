@@ -17,10 +17,15 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotEmpty;
 
 /**
  * UnRegister
+ * 注销对象
  *
  * @author qian.he
  * @version 0.1.0
@@ -28,6 +33,7 @@ import lombok.Data;
  * @since 0.1.0
  **/
 @Data
+@JsonRootName("UnRegisterObject")
 public class UnRegister {
 
     /**
@@ -38,5 +44,7 @@ public class UnRegister {
      * @since 0.1.0
      */
     @JsonProperty(value = "DeviceID")
+    @NotEmpty
+    @Length(max = 40, min = 40)
     private String deviceID;
 }

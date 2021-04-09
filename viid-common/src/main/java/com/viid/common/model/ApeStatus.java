@@ -20,26 +20,52 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 /**
- * SubImageInfoList
+ * ApeStatus
+ * 采集设备状态对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/10
  * @since 0.1.0
  **/
 @Data
-@JsonRootName("SubImageInfoListObject")
-public class SubImageInfoList {
+@JsonRootName("APEStatusObject")
+public class ApeStatus {
 
     /**
-     * 子图像信息集合
+     * 设备ID
      *
+     * @required
+     * @mock 31000051511191250218
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "ApeID")
+    private String apeId;
+
+
+    /**
+     * 是否在线
+     *
+     * @required
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "SubImageInfoObject")
-    private List<SubImageInfo> subImageInfoObject;
+    @JsonProperty(value = "IsOnline")
+    private String isOnline;
+
+
+
+    /**
+     * 当前时间
+     *
+     * @required
+     * @mock
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "CurrentTime")
+    private LocalDateTime currentTime;
+
 }

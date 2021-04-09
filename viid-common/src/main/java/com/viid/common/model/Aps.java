@@ -21,24 +21,74 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
 /**
- * KeepAlive
+ * Aps
+ * 采集系统对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/10
  * @since 0.1.0
  **/
 @Data
-@JsonRootName("KeepaliveObject")
-public class KeepAlive {
-
+@JsonRootName("APSObject")
+public class Aps {
     /**
-     * 设备或系统ID
+     * 设备ID
      *
      * @required
      * @mock 31000051511191250218
      * @since 0.1.0
      */
-    @JsonProperty(value = "DeviceID")
-    private String deviceID;
+    @JsonProperty(value = "ApsID")
+    private String apsId;
+
+    /**
+     * IP地址
+     *
+     * @required
+     * @mock 127.0.0.1
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "IPAddr")
+    private String ipAddr;
+
+    /**
+     * IPv6地址
+     *
+     * @mock 127.0.0.1
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "IPV6Addr")
+    private String ipV6Addr;
+
+
+    /**
+     * 是否在线
+     *
+     * @required
+     * @mock
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "IsOnline")
+    private String isOnline;
+
+    /**
+     * 名称
+     *
+     * @required
+     * @mock
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "Name")
+    private String name;
+
+    /**
+     * 端口号
+     *
+     * @required
+     * @mock
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "Port")
+    private Integer port;
 }

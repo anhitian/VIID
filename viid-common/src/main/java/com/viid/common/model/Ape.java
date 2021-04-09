@@ -17,10 +17,12 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
 /**
  * Ape
+ * 采集设备对象
  *
  * @author qian.he
  * @version 0.1.0
@@ -29,6 +31,7 @@ import lombok.Data;
  **/
 
 @Data
+@JsonRootName("APEObject")
 public class Ape {
 
     /**
@@ -137,7 +140,6 @@ public class Ape {
     private String monitorAreaDesc;
 
 
-
     /**
      * 监视方向
      *
@@ -160,7 +162,6 @@ public class Ape {
     private String name;
 
 
-
     /**
      * 管辖单位代码
      *
@@ -169,7 +170,6 @@ public class Ape {
      */
     @JsonProperty(value = "OrgCode")
     private String orgCode;
-
 
 
     /**
@@ -182,7 +182,6 @@ public class Ape {
     private String ownerApsID;
 
 
-
     /**
      * 口令
      *
@@ -193,7 +192,6 @@ public class Ape {
     private String password;
 
 
-
     /**
      * 位置名
      *
@@ -202,8 +200,6 @@ public class Ape {
      */
     @JsonProperty(value = "Place")
     private String place;
-
-
 
 
     /**
@@ -236,7 +232,6 @@ public class Ape {
      */
     @JsonProperty(value = "PositionType")
     private String positionType;
-
 
 
     /**

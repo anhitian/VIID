@@ -17,10 +17,14 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
+
+import java.util.List;
 
 /**
  * ApeList
+ * 采集设备集合对象
  *
  * @author qian.he
  * @version 0.1.0
@@ -29,7 +33,9 @@ import lombok.Data;
  **/
 
 @Data
+@JsonRootName("APEListObject")
 public class ApeList {
+
 
     /**
      * 采集设备集合
@@ -37,6 +43,6 @@ public class ApeList {
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "apeListObject")
-    private ApeListObject apeListObject;
+    @JsonProperty(value = "APEObject")
+    private List<Ape> apes;
 }

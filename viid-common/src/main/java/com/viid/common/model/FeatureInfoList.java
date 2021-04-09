@@ -17,6 +17,7 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
 import java.util.List;
@@ -30,9 +31,11 @@ import java.util.List;
  * @since 1.0
  **/
 @Data
+@JsonRootName("FeatureInfoListObject")
 public class FeatureInfoList {
     /**
      * 特征值集合
+     *
      * @mock
      * @since 0.1.0
      */

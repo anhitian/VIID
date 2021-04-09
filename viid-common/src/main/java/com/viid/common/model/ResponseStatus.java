@@ -17,6 +17,7 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -30,12 +31,13 @@ import java.time.LocalDateTime;
  * @since 0.1.0
  **/
 @Data
+@JsonRootName("ResponseStatusObject")
 public class ResponseStatus {
 
     /**
      * id编号
      *
-     * @mock
+     * @mock 31000051511191250218
      * @since 0.1.0
      */
     @JsonProperty(value = "Id")
@@ -45,7 +47,7 @@ public class ResponseStatus {
      * 请求
      *
      * @required
-     * @mock
+     * @mock /VIID/System/Register
      * @since 0.1.0
      */
     @JsonProperty(value = "RequestURL")
@@ -54,7 +56,7 @@ public class ResponseStatus {
     /**
      * 当地时间
      *
-     * @mock
+     * @mock 20190312155033
      * @since 0.1.0
      */
     @JsonProperty(value = "LocalTime")
@@ -64,16 +66,16 @@ public class ResponseStatus {
      * 状态码
      *
      * @required
-     * @mock
+     * @mock 0
      * @since 0.1.0
      */
-    @JsonProperty(value = "Register")
+    @JsonProperty(value = "StatusCode")
     private Integer statusCode;
 
     /**
      * 状态信息
      *
-     * @mock
+     * @mock ok
      * @since 0.1.0
      */
     @JsonProperty(value = "StatusString")

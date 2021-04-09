@@ -17,6 +17,7 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
 import java.util.List;
@@ -31,11 +32,13 @@ import java.util.List;
  **/
 
 @Data
+@JsonRootName("ResponseStatusListObject")
 public class ResponseStatusListObject {
 
 
     /**
      * 返回状态对象
+     *
      * @mock
      * @since 0.1.0
      */

@@ -17,6 +17,7 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
 /**
@@ -28,6 +29,7 @@ import lombok.Data;
  * @since 1.0
  **/
 @Data
+@JsonRootName("FeatureInfoObject")
 public class FeatureInfo {
 
 

@@ -17,26 +17,54 @@
 package com.viid.common.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 /**
- * ApeListObject
- *
+ * ApsStatus
+ * 采集系统状态对象
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/10
  * @since 0.1.0
  **/
 @Data
-public class ApeListObject {
+@JsonRootName("APSStatusObject")
+public class ApsStatus {
 
     /**
-     * 采集设备对象
+     * 设备ID
+     *
+     * @required
+     * @mock 31000051511191250218
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "ApsID")
+    private String apsID;
+
+
+    /**
+     * 是否在线
+     *
+     * @required
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "APEObject")
-    private List<Ape> apeObject;
+    @JsonProperty(value = "IsOnline")
+    private String isOnline;
+
+
+
+    /**
+     * 当前时间
+     *
+     * @required
+     * @mock
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "CurrentTime")
+    private LocalDateTime currentTime;
+
 }
