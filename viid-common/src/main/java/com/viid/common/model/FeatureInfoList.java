@@ -16,6 +16,7 @@
 
 package com.viid.common.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
@@ -24,6 +25,7 @@ import java.util.List;
 
 /**
  * FeatureInfoList
+ * 特征值集合对象
  *
  * @author qian.he
  * @version 1.0
@@ -32,6 +34,7 @@ import java.util.List;
  **/
 @Data
 @JsonRootName("FeatureInfoListObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class FeatureInfoList {
     /**
      * 特征值集合

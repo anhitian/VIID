@@ -16,6 +16,7 @@
 
 package com.viid.common.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
@@ -31,6 +32,7 @@ import lombok.Data;
  **/
 @Data
 @JsonRootName("APSObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Aps {
     /**
      * 设备ID

@@ -16,6 +16,7 @@
 
 package com.viid.common.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
@@ -34,6 +35,7 @@ import java.util.List;
 
 @Data
 @JsonRootName("APSStatusListObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApsStatusList {
 
     /**

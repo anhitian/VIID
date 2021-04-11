@@ -24,6 +24,7 @@ import java.time.LocalDateTime;
 
 /**
  * SubImageInfo
+ * 子图像信息对象
  *
  * @author qian.he
  * @version 0.1.0

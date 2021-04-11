@@ -16,6 +16,7 @@
 
 package com.viid.common.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
@@ -24,6 +25,7 @@ import java.time.LocalDateTime;
 
 /**
  * ResponseStatus
+ * 返回状态
  *
  * @author qian.he
  * @version 0.1.0
@@ -32,6 +34,7 @@ import java.time.LocalDateTime;
  **/
 @Data
 @JsonRootName("ResponseStatusObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseStatus {
 
     /**
@@ -80,4 +83,16 @@ public class ResponseStatus {
      */
     @JsonProperty(value = "StatusString")
     private String statusString;
+
+
+   public static ResponseStatus ok(String id,String requestURL){
+       ResponseStatus responseStatus= new ResponseStatus();
+       responseStatus.setId(id);
+       responseStatus.setRequestURL(requestURL);
+       responseStatus.setLocalTime(LocalDateTime.now());
+       responseStatus.setStatusCode(0);
+       responseStatus.setStatusString("");
+       return responseStatus;
+   }
+
 }

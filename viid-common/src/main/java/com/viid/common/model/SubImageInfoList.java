@@ -24,6 +24,7 @@ import java.util.List;
 
 /**
  * SubImageInfoList
+ * 子图像信息对象集合
  *
  * @author qian.he
  * @version 0.1.0

@@ -16,6 +16,7 @@
 
 package com.viid.common.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
@@ -24,6 +25,7 @@ import java.util.List;
 
 /**
  * ResponseStatusListObject
+ * 返回状态集合对象
  *
  * @author qian.he
  * @version 0.1.0
@@ -33,11 +35,12 @@ import java.util.List;
 
 @Data
 @JsonRootName("ResponseStatusListObject")
-public class ResponseStatusListObject {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ResponseStatusList {
 
 
     /**
-     * 返回状态对象
+     * 返回状态对象集合
      *
      * @mock
      * @since 0.1.0

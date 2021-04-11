@@ -16,27 +16,34 @@
 
 package com.viid.common.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
+import java.util.List;
+
 /**
- * ResponseStatusObject
+ * CaseInfoList
+ * 案事件集合对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/10
  * @since 0.1.0
  **/
+
 @Data
-public class ResponseStatusObject {
+@JsonRootName("CaseInfoListObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class CaseInfoList {
 
     /**
-     * 返回状态
+     * 案事件对象集合
      *
-     * @required
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "ResponseStatusObject")
-    private ResponseStatus responseStatus;
+    @JsonProperty(value = "CaseInfoObject")
+    private List<CaseInfo> caseInfos;
 }

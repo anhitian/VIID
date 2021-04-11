@@ -16,12 +16,17 @@
 
 package com.viid.common.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotEmpty;
 
 /**
  * KeepAlive
+ * 保活对象
  *
  * @author qian.he
  * @version 0.1.0
@@ -30,6 +35,7 @@ import lombok.Data;
  **/
 @Data
 @JsonRootName("KeepaliveObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class KeepAlive {
 
     /**
@@ -40,5 +46,7 @@ public class KeepAlive {
      * @since 0.1.0
      */
     @JsonProperty(value = "DeviceID")
+    @NotEmpty
+    @Length(max = 20, min = 20)
     private String deviceID;
 }

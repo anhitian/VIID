@@ -16,6 +16,7 @@
 
 package com.viid.common.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
@@ -25,6 +26,7 @@ import java.time.LocalDateTime;
 /**
  * ApsStatus
  * 采集系统状态对象
+ *
  * @author qian.he
  * @version 0.1.0
  * @date 2021/4/10
@@ -32,6 +34,7 @@ import java.time.LocalDateTime;
  **/
 @Data
 @JsonRootName("APSStatusObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApsStatus {
 
     /**

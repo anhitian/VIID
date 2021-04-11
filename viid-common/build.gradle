@@ -4,7 +4,7 @@ apply plugin: 'org.springframework.boot'
 
 dependencies {
   compileOnly "org.springframework.boot:spring-boot-starter-web"
-
+  compileOnly 'com.baomidou:mybatis-plus-boot-starter'
   compileOnly 'org.springframework.boot:spring-boot-starter-validation'
 }
 
