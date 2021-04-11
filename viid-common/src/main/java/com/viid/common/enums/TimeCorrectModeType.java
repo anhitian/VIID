@@ -31,16 +31,16 @@ import lombok.Getter;
 @Getter
 public enum TimeCorrectModeType {
 
-    NET(1,"网络"),
-    MANUAL(2,"手动");
+    NETWORK("1","网络"),
+    MANUAL("2","手动");
 
     @JsonValue
     @EnumValue
-    private final int code;
+    private final String code;
 
     private final String desc;
 
-    TimeCorrectModeType(Integer code,String desc) {
+    TimeCorrectModeType(String code,String desc) {
         this.code = code;
         this.desc=desc;
     }
