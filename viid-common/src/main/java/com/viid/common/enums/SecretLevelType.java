@@ -21,25 +21,33 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 /**
- * TimeCorrectModeType
- * 校时模式
+ * SecretLevelType
+ * 密级代码
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/11
+ * @date 2021-04-12 15:36
  * @since 0.1.0
- **/
-@Getter
-public enum TimeCorrectModeType {
+ */
 
+@Getter
+public enum SecretLevelType {
     /**
      * 序号	消息中取值	说明
-     * 1	1	网络
-     * 2	2	手动
+     * 1	1	绝密
+     * 2	2	机密
+     * 3	3	秘密
+     * 4	4	内部
+     * 5	5	公开
+     * 6	9	其他
      */
     
-    NETWORK("1", "网络"),
-    MANUAL("2", "手动");
+    TOP_SECRET("1", "绝密"),
+    CONFIDENTIAL("2", "机密"),
+    SECRET("3", "秘密"),
+    INTERNAL("4", "内部"),
+    PUBLIC("5", "公开"),
+    OTHER("9", "其他");
 
     @JsonValue
     @EnumValue
@@ -47,7 +55,7 @@ public enum TimeCorrectModeType {
 
     private final String desc;
 
-    TimeCorrectModeType(String code, String desc) {
+    SecretLevelType(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

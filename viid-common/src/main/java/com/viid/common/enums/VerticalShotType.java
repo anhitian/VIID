@@ -21,25 +21,27 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 /**
- * TimeCorrectModeType
- * 校时模式
+ * VerticalShotType
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/11
+ * @date 2021-04-12 19:32
  * @since 0.1.0
- **/
+ */
+
 @Getter
-public enum TimeCorrectModeType {
+public enum VerticalShotType {
 
     /**
      * 序号	消息中取值	说明
-     * 1	1	网络
-     * 2	2	手动
+     * 1	1	上
+     * 2	2	水平
+     * 3	3	下
      */
-    
-    NETWORK("1", "网络"),
-    MANUAL("2", "手动");
+
+    UP("1", "上"),
+    HORIZON("2", "水平"),
+    DOWN("3", "下");
 
     @JsonValue
     @EnumValue
@@ -47,7 +49,7 @@ public enum TimeCorrectModeType {
 
     private final String desc;
 
-    TimeCorrectModeType(String code, String desc) {
+    VerticalShotType(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

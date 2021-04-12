@@ -21,25 +21,43 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 /**
- * TimeCorrectModeType
- * 校时模式
+ * PostureType
+ * 姿态
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/11
+ * @date 2021-04-12 19:35
  * @since 0.1.0
- **/
-@Getter
-public enum TimeCorrectModeType {
+ */
 
-    /**
-     * 序号	消息中取值	说明
-     * 1	1	网络
-     * 2	2	手动
-     */
+@Getter
+public enum PostureType {
     
-    NETWORK("1", "网络"),
-    MANUAL("2", "手动");
+    /**
+     * 1	1	站
+     * 2	2	蹲
+     * 3	3	卧
+     * 4	4	躺
+     * 5	5	坐
+     * 6	6	行走
+     * 7	7	奔跑
+     * 8	8	跳跃
+     * 9	9	攀登
+     * 10	10	匍匐
+     * 11	99	其他
+     */
+
+    STAND("1", "站"),
+    SQUAT("2", "蹲"),
+    LYING("3", "卧"),
+    LIE_DOWN("4", "躺"),
+    SIT("5", "坐"),
+    WALK("6", "行走"),
+    RUN("7", "奔跑"),
+    JUMP("8", "跳跃"),
+    CLIMB("9", "攀登"),
+    CREEPING("10", "匍匐"),
+    OTHER("99", "其他");
 
     @JsonValue
     @EnumValue
@@ -47,7 +65,7 @@ public enum TimeCorrectModeType {
 
     private final String desc;
 
-    TimeCorrectModeType(String code, String desc) {
+    PostureType(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

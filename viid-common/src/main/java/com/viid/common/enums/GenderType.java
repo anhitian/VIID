@@ -22,7 +22,8 @@ import lombok.Getter;
 
 /**
  * GenderType
- * UNKNOWN("0","未知"),
+ * 性别
+ *
  * @author qian.he
  * @version 0.1.0
  * @date 2021/4/12
@@ -32,10 +33,17 @@ import lombok.Getter;
 @Getter
 public enum GenderType {
 
-    UNKNOWN("0","未知"),
-    MALE("1","男性"),
-    FEMALE("2","女性"),
-    NOT_COMMENT("9","未说明");
+    /**
+     * 序号	消息中取值	说明
+     * 1	0	未知的性别
+     * 2	1	男性
+     * 3	2	女性
+     * 4	9	未说明的性别
+     */
+    UNKNOWN("0", "未知"),
+    MALE("1", "男性"),
+    FEMALE("2", "女性"),
+    NOT_COMMENT("9", "未说明");
 
     @JsonValue
     @EnumValue
@@ -43,8 +51,8 @@ public enum GenderType {
 
     private final String desc;
 
-    GenderType(String code,String desc) {
+    GenderType(String code, String desc) {
         this.code = code;
-        this.desc=desc;
+        this.desc = desc;
     }
 }

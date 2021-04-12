@@ -21,25 +21,32 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 /**
- * TimeCorrectModeType
- * 校时模式
+ * QualityGradeType
+ * 质量等级
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/11
+ * @date 2021-04-12 19:26
  * @since 0.1.0
- **/
-@Getter
-public enum TimeCorrectModeType {
+ */
 
+@Getter
+public enum QualityGradeType {
+    
     /**
      * 序号	消息中取值	说明
-     * 1	1	网络
-     * 2	2	手动
+     * 1	1	极差
+     * 2	2	较差
+     * 3	3	一般
+     * 4	4	较好
+     * 5	5	很好
      */
-    
-    NETWORK("1", "网络"),
-    MANUAL("2", "手动");
+
+    POOR("1", "极差"),
+    FAIR("2", "较差"),
+    AVERAGE("3", "一般"),
+    GOOD("4", "较好"),
+    EXCELLENT("5", "很好");
 
     @JsonValue
     @EnumValue
@@ -47,7 +54,7 @@ public enum TimeCorrectModeType {
 
     private final String desc;
 
-    TimeCorrectModeType(String code, String desc) {
+    QualityGradeType(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

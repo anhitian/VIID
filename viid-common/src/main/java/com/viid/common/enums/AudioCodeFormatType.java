@@ -21,25 +21,33 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 /**
- * TimeCorrectModeType
- * 校时模式
+ * AudioCodeFormatType
+ * 音频编码格式
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/11
+ * @date 2021-04-12 14:20
  * @since 0.1.0
- **/
+ */
+
 @Getter
-public enum TimeCorrectModeType {
+public enum AudioCodeFormatType {
 
     /**
      * 序号	消息中取值	说明
-     * 1	1	网络
-     * 2	2	手动
+     * 1	1	G.711a
+     * 2	2	G.711u
+     * 3	3	G.723
+     * 4	4	G.729
+     * 5	5	SVAC
+     * 6	99	其他
      */
-    
-    NETWORK("1", "网络"),
-    MANUAL("2", "手动");
+    G711A("1", "G.711a"),
+    G711U("2", "G.711u"),
+    G723("3", "G.723"),
+    G729("4", "G.729"),
+    SVAC("5", "SVAC"),
+    OTHER("99", "其他");
 
     @JsonValue
     @EnumValue
@@ -47,7 +55,7 @@ public enum TimeCorrectModeType {
 
     private final String desc;
 
-    TimeCorrectModeType(String code, String desc) {
+    AudioCodeFormatType(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

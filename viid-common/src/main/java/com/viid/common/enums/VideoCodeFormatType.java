@@ -21,33 +21,44 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 /**
- * TimeCorrectModeType
- * 校时模式
+ * VideoCodeFormatType
+ * 视频编码格式
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/11
+ * @date 2021-04-12 14:24
  * @since 0.1.0
- **/
-@Getter
-public enum TimeCorrectModeType {
+ */
 
+@Getter
+public enum VideoCodeFormatType {
     /**
      * 序号	消息中取值	说明
-     * 1	1	网络
-     * 2	2	手动
+     * 1	1	SVAC
+     * 2	2	H.264
+     * 3	3	MPEG-4
+     * 4	4	MPEG-2
+     * 5	5	MJPEG
+     * 6	6	H.263
+     * 7	7	H.265
+     * 8	99	其他
      */
+    SVAC("1", "SVAC"),
+    H264("2", "H.264"),
+    MPEG4("3", "MPEG-4"),
+    MPEG2("4", "MPEG-2"),
+    MJPEG("5", "MJPEG"),
+    H263("6", "H.263"),
+    H265("7", "H.265"),
+    OTHER("99", "其他");
     
-    NETWORK("1", "网络"),
-    MANUAL("2", "手动");
-
     @JsonValue
     @EnumValue
     private final String code;
 
     private final String desc;
 
-    TimeCorrectModeType(String code, String desc) {
+    VideoCodeFormatType(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }
