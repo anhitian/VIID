@@ -46,14 +46,14 @@ public enum PropertyType {
      * 8	8	关键字
      */
 
-    PERSON_NAME(1,"人名"),
-    ID_NUMBER(2,"证件号码"),
-    LICENSE_PLATE(3,"车牌"),
-    LICENSE_PLATE_COLOR(4,"车牌颜色"),
-    VEHICLE_BRANDS(5,"车辆品牌"),
-    VEHICLE_MODEL(6,"车辆型号"),
-    VEHICLE_YEAR(7,"车辆年款"),
-    KEYWORD(8,"关键字");
+    PERSON_NAME(1, "人名"),
+    ID_NUMBER(2, "证件号码"),
+    LICENSE_PLATE(3, "车牌"),
+    LICENSE_PLATE_COLOR(4, "车牌颜色"),
+    VEHICLE_BRANDS(5, "车辆品牌"),
+    VEHICLE_MODEL(6, "车辆型号"),
+    VEHICLE_YEAR(7, "车辆年款"),
+    KEYWORD(8, "关键字");
 
 
     @JsonValue

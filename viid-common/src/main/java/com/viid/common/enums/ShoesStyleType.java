@@ -23,6 +23,7 @@ import lombok.Getter;
 /**
  * ShoesStyleType
  * 鞋子款式
+ *
  * @author qian.he
  * @version 0.1.0
  * @date 2021/4/13
@@ -49,18 +50,18 @@ public enum ShoesStyleType {
      * 12	12	无靴子
      * 13	99	其他
      */
-    SNEAKERS("1","板鞋"),
-    LEATHER_SHOES("2","皮鞋"),
-    SPORTS_SHOES("3","运动鞋"),
-    FLIP_FLOP("4","拖鞋"),
-    SANDALS("5","凉鞋"),
-    CASUAL_SHOES("6","休闲鞋"),
-    HIGH_BOOTS("7","高筒靴"),
-    MID_BOOTS("8","中筒靴"),
-    LOW_BOOTS("9","低筒靴"),
-    HIKING_BOOTS("10","登山靴"),
-    MILITARY_BOOTS("11","军装靴"),
-    NO_BOOTS("12","无靴子"),
+    SNEAKERS("1", "板鞋"),
+    LEATHER_SHOES("2", "皮鞋"),
+    SPORTS_SHOES("3", "运动鞋"),
+    FLIP_FLOP("4", "拖鞋"),
+    SANDALS("5", "凉鞋"),
+    CASUAL_SHOES("6", "休闲鞋"),
+    HIGH_BOOTS("7", "高筒靴"),
+    MID_BOOTS("8", "中筒靴"),
+    LOW_BOOTS("9", "低筒靴"),
+    HIKING_BOOTS("10", "登山靴"),
+    MILITARY_BOOTS("11", "军装靴"),
+    NO_BOOTS("12", "无靴子"),
     OTHER("99", "其他");
 
     @JsonValue

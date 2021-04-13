@@ -38,9 +38,9 @@ public enum AutoFoilColorType {
      * 2	2	浅色
      * 3	3	无
      */
-    DARK("1","深色"),
-    LIGHT("2","浅色"),
-    NONE("3","无");
+    DARK("1", "深色"),
+    LIGHT("2", "浅色"),
+    NONE("3", "无");
 
     @JsonValue
     @EnumValue

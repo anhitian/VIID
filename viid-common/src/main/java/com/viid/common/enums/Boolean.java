@@ -36,8 +36,8 @@ public enum Boolean {
      * 1	0	否，无，false，离线等否定状态
      * 2	1	是，有，true，在线等肯定状态
      */
-    TRUE("1","是，有，true，在线等肯定状态"),
-    FALSE("0","否，无，false，离线等否定状态");
+    TRUE("1", "是，有，true，在线等肯定状态"),
+    FALSE("0", "否，无，false，离线等否定状态");
 
     @JsonValue
     @EnumValue

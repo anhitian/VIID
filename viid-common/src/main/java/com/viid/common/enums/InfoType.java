@@ -39,9 +39,9 @@ public enum InfoType {
      * 2	1	自动采集	采集设备及视频分析系统采集
      * 3	2	人工采集	人工采集通过应用平台输入
      */
-    OTHER(0,"其他"),
-    AUTOMATIC_COLLECTION(1,"自动采集 采集设备及视频分析系统采集"),
-    MANUAL_COLLECTION(2,"人工采集 人工采集通过应用平台输入");
+    OTHER(0, "其他"),
+    AUTOMATIC_COLLECTION(1, "自动采集 采集设备及视频分析系统采集"),
+    MANUAL_COLLECTION(2, "人工采集 人工采集通过应用平台输入");
 
     @JsonValue
     @EnumValue

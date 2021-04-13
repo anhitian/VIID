@@ -51,21 +51,21 @@ public enum ImageFormatType {
      * 15	Jp2	JPEG 2000
      * 16	Other	其他
      */
-    BMP("Bmp","BMP"),
-    GIF("Gif","GIF"),
-    JPEG("Jpeg","JPEG"),
-    JFIF("Jfif","JFIF"),
-    KDC("Kdc","KDC"),
-    PCD("Pcd","PCD"),
-    PCX("Pcx","PCX"),
-    PIC("Pic","PIC"),
-    PIX("Pix","PIX"),
-    PNG("Png","PNG"),
-    TAPGA("Tapga","TAPGA"),
-    TIFF("Tiff","TIFF"),
-    WMF("Wmf","WMF"),
-    JPEG_2000("Jp2","JPEG 2000"),
-    OTHER("Other","其他");
+    BMP("Bmp", "BMP"),
+    GIF("Gif", "GIF"),
+    JPEG("Jpeg", "JPEG"),
+    JFIF("Jfif", "JFIF"),
+    KDC("Kdc", "KDC"),
+    PCD("Pcd", "PCD"),
+    PCX("Pcx", "PCX"),
+    PIC("Pic", "PIC"),
+    PIX("Pix", "PIX"),
+    PNG("Png", "PNG"),
+    TAPGA("Tapga", "TAPGA"),
+    TIFF("Tiff", "TIFF"),
+    WMF("Wmf", "WMF"),
+    JPEG_2000("Jp2", "JPEG 2000"),
+    OTHER("Other", "其他");
 
 
     @JsonValue

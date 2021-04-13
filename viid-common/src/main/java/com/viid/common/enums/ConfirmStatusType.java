@@ -44,16 +44,16 @@ public enum ConfirmStatusType {
      * 8	8	JSON内容无效
      * 9	9	系统重启中
      */
-    NORMAL("0","正常"),
-    UNKNOWN_ERROR("1","未知错误"),
-    BUSY("2","繁忙"),
-    ERROR("3","错误"),
-    INVALID_OPERATION("4","无效操作"),
-    INVALID_XML_FORMAT("5","无效XML格式"),
-    INVALID_XML_CONTENT("6","无效XML内容"),
-    INVALID_JSON_FORMAT("7","JSON格式无效"),
-    INVALID_JSON_CONTENT("8","JSON内容无效"),
-    SYSTEM_REBOOT("9","系统重启中");
+    NORMAL("0", "正常"),
+    UNKNOWN_ERROR("1", "未知错误"),
+    BUSY("2", "繁忙"),
+    ERROR("3", "错误"),
+    INVALID_OPERATION("4", "无效操作"),
+    INVALID_XML_FORMAT("5", "无效XML格式"),
+    INVALID_XML_CONTENT("6", "无效XML内容"),
+    INVALID_JSON_FORMAT("7", "JSON格式无效"),
+    INVALID_JSON_CONTENT("8", "JSON内容无效"),
+    SYSTEM_REBOOT("9", "系统重启中");
 
     @JsonValue
     @EnumValue

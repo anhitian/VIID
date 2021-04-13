@@ -32,7 +32,7 @@ import lombok.Getter;
 
 @Getter
 public enum PostureType {
-    
+
     /**
      * 1	1	站
      * 2	2	蹲

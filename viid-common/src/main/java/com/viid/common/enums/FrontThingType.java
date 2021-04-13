@@ -44,11 +44,11 @@ public enum FrontThingType {
      * 6	99	其他
      */
 
-    DETECTION_MARK("1","检测标志"),
-    PERFUME("2","香水"),
-    ORNAMENTS("3","挂饰"),
-    SUN_VISOR("4","遮阳板"),
-    NIGHT_SUN_VISOR("5","夜间遮阳板"),
+    DETECTION_MARK("1", "检测标志"),
+    PERFUME("2", "香水"),
+    ORNAMENTS("3", "挂饰"),
+    SUN_VISOR("4", "遮阳板"),
+    NIGHT_SUN_VISOR("5", "夜间遮阳板"),
     OTHER("99", "其他");
 
     @JsonValue

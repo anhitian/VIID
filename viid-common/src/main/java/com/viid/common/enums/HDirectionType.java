@@ -46,14 +46,14 @@ public enum HDirectionType {
      * 8	8	东南到西北（西北）
      * 9	9	其他
      */
-    WEST_TO_EAST("1","西向东（东）"),
-    EAST_TO_WEST("2","东向西（西）"),
-    NORTH_TO_SOUTH("3","北向南（南）"),
-    SOUTH_TO_NORTH("4","南向北（北）"),
-    SOUTHWEST_TO_NORTHEAST("5","西南到东北（东北）"),
-    NORTHEAST_TO_SOUTHWEST("6","东北到西南（西南）"),
-    NORTHWEST_TO_SOUTHEAST("7","西北到东南（东南）"),
-    SOUTHEAST_TO_NORTHWEST("8","东南到西北（西北）"),
+    WEST_TO_EAST("1", "西向东（东）"),
+    EAST_TO_WEST("2", "东向西（西）"),
+    NORTH_TO_SOUTH("3", "北向南（南）"),
+    SOUTH_TO_NORTH("4", "南向北（北）"),
+    SOUTHWEST_TO_NORTHEAST("5", "西南到东北（东北）"),
+    NORTHEAST_TO_SOUTHWEST("6", "东北到西南（西南）"),
+    NORTHWEST_TO_SOUTHEAST("7", "西北到东南（东南）"),
+    SOUTHEAST_TO_NORTHWEST("8", "东南到西北（西北）"),
     OTHER("9", "其他");
 
     @JsonValue

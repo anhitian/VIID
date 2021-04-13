@@ -41,7 +41,7 @@ public enum SecretLevelType {
      * 5	5	公开
      * 6	9	其他
      */
-    
+
     TOP_SECRET("1", "绝密"),
     CONFIDENTIAL("2", "机密"),
     SECRET("3", "秘密"),

@@ -37,7 +37,7 @@ public enum TimeCorrectModeType {
      * 1	1	网络
      * 2	2	手动
      */
-    
+
     NETWORK("1", "网络"),
     MANUAL("2", "手动");
 

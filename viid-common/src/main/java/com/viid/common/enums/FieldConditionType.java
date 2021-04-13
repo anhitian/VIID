@@ -41,10 +41,10 @@ public enum FieldConditionType {
      * 3	3	伪造现场
      * 4	4	未知现场
      */
-    ORIGINAL_SCENE("1","原始现场"),
-    CHANGED_SCENE("2","变动现场"),
-    FORGED_SCENE("3","伪造现场"),
-    UNKNOWN_SCENE("4","未知现场");
+    ORIGINAL_SCENE("1", "原始现场"),
+    CHANGED_SCENE("2", "变动现场"),
+    FORGED_SCENE("3", "伪造现场"),
+    UNKNOWN_SCENE("4", "未知现场");
 
 
     @JsonValue

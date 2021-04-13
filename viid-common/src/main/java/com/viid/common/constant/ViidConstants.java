@@ -26,5 +26,5 @@ package com.viid.common.constant;
  **/
 public interface ViidConstants {
 
-    String DATE_TIME_FORMATTER_PATTERN="yyyyMMddHHmmss";
+    String DATE_TIME_FORMATTER_PATTERN = "yyyyMMddHHmmss";
 }

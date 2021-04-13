@@ -40,10 +40,10 @@ public enum ThingPropertyType {
      * 4	4	缴获
      * 5	99	其他
      */
-    CRIME_TOOL("1","作案工具"),
-    STOLEN("2","被盗抢"),
-    LOSS("3","损失"),
-    SEIZED("4","缴获"),
+    CRIME_TOOL("1", "作案工具"),
+    STOLEN("2", "被盗抢"),
+    LOSS("3", "损失"),
+    SEIZED("4", "缴获"),
     OTHER("99", "其他");
 
     @JsonValue

@@ -44,12 +44,12 @@ public enum RearThingType {
      * 6	6	涂鸦
      * 7	99	其他
      */
-    PILLOW("1","枕头"),
-    UMBRELLA("2","雨伞"),
-    PAPER_TOWEL("3","纸巾"),
-    CAR_STICKER("4","车贴"),
-    LOGO ("5","标识"),
-    GRAFFITI("6","涂鸦"),
+    PILLOW("1", "枕头"),
+    UMBRELLA("2", "雨伞"),
+    PAPER_TOWEL("3", "纸巾"),
+    CAR_STICKER("4", "车贴"),
+    LOGO("5", "标识"),
+    GRAFFITI("6", "涂鸦"),
     OTHER("99", "其他");
 
     @JsonValue

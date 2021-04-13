@@ -41,11 +41,11 @@ public enum DispositionCategoryType {
      * 4	4	非机动车
      * 5	5	关键字
      */
-    PERSON("1","人员"),
-    FACE("2","人脸"),
-    MOTO_VEHICLE("3","机动车"),
-    NON_MOTO_VEHICLE("4","非机动车"),
-    KEYWORD("5","关键字");
+    PERSON("1", "人员"),
+    FACE("2", "人脸"),
+    MOTO_VEHICLE("3", "机动车"),
+    NON_MOTO_VEHICLE("4", "非机动车"),
+    KEYWORD("5", "关键字");
 
     @JsonValue
     @EnumValue

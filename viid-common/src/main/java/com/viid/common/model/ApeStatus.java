@@ -59,7 +59,6 @@ public class ApeStatus {
     private String isOnline;
 
 
-
     /**
      * 当前时间
      *

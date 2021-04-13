@@ -39,9 +39,9 @@ public enum DentInfoType {
      * 3	2	大量撞痕
      */
 
-    NO_BUMPS("0","没有撞痕"),
-    FEW_BUMPS("1","少量撞痕"),
-    LOTS_OF_BUMPS("2","大量撞痕");
+    NO_BUMPS("0", "没有撞痕"),
+    FEW_BUMPS("1", "少量撞痕"),
+    LOTS_OF_BUMPS("2", "大量撞痕");
 
     @JsonValue
     @EnumValue

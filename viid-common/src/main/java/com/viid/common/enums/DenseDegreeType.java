@@ -41,10 +41,10 @@ public enum DenseDegreeType {
      * 3	3	密集
      * 4	4	很密集
      */
-    VERY_SPARSE("1","很稀疏"),
-    SPARSE("2","稀疏"),
-    DENSE("3","密集"),
-    VERY_DENSE("4","很密集");
+    VERY_SPARSE("1", "很稀疏"),
+    SPARSE("2", "稀疏"),
+    DENSE("3", "密集"),
+    VERY_DENSE("4", "很密集");
 
     @JsonValue
     @EnumValue

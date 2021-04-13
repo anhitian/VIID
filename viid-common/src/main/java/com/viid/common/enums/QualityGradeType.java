@@ -32,7 +32,7 @@ import lombok.Getter;
 
 @Getter
 public enum QualityGradeType {
-    
+
     /**
      * 序号	消息中取值	说明
      * 1	1	极差

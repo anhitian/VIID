@@ -85,14 +85,14 @@ public class ResponseStatus {
     private String statusString;
 
 
-   public static ResponseStatus ok(String id,String requestURL){
-       ResponseStatus responseStatus= new ResponseStatus();
-       responseStatus.setId(id);
-       responseStatus.setRequestURL(requestURL);
-       responseStatus.setLocalTime(LocalDateTime.now());
-       responseStatus.setStatusCode(0);
-       responseStatus.setStatusString("");
-       return responseStatus;
-   }
+    public static ResponseStatus ok(String id, String requestURL) {
+        ResponseStatus responseStatus = new ResponseStatus();
+        responseStatus.setId(id);
+        responseStatus.setRequestURL(requestURL);
+        responseStatus.setLocalTime(LocalDateTime.now());
+        responseStatus.setStatusCode(0);
+        responseStatus.setStatusString("");
+        return responseStatus;
+    }
 
 }

@@ -59,7 +59,6 @@ public class ApsStatus {
     private String isOnline;
 
 
-
     /**
      * 当前时间
      *

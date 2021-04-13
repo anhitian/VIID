@@ -23,6 +23,7 @@ import lombok.Getter;
 /**
  * HumidityType
  * 现场湿度
+ *
  * @author qian.he
  * @version 0.1.0
  * @date 2021/4/13
@@ -38,9 +39,9 @@ public enum HumidityType {
      * 3	3	适宜
      */
 
-    DAMP("1","潮湿"),
-    DRY("2","干燥"),
-    SUITABLE("3","适宜");
+    DAMP("1", "潮湿"),
+    DRY("2", "干燥"),
+    SUITABLE("3", "适宜");
 
 
     @JsonValue

@@ -47,16 +47,16 @@ public enum DetaineesIdentityType {
      * 10	10	军人
      * 11	99	其他
      */
-    CIVIL_SERVANTS("1","国家公务员"),
-    ENTERPRISE_MANAGEMENT_PERSONNEL("2","企事业管理人员"),
-    CORPORATE_STAFF("3","企事业职员"),
-    WORKER("4","工人"),
-    FARMER("5","农民"),
-    SELF_EMPLOYED("6","个体工商业者"),
-    SCHOOL_STUDENT("7","在校学生"),
-    RETIREES("8","离退休人员"),
-    UNEMPLOYED("9","无业人员"),
-    SOLDIER("10","军人"),
+    CIVIL_SERVANTS("1", "国家公务员"),
+    ENTERPRISE_MANAGEMENT_PERSONNEL("2", "企事业管理人员"),
+    CORPORATE_STAFF("3", "企事业职员"),
+    WORKER("4", "工人"),
+    FARMER("5", "农民"),
+    SELF_EMPLOYED("6", "个体工商业者"),
+    SCHOOL_STUDENT("7", "在校学生"),
+    RETIREES("8", "离退休人员"),
+    UNEMPLOYED("9", "无业人员"),
+    SOLDIER("10", "军人"),
     OTHER("99", "其他");
 
     @JsonValue

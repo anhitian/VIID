@@ -41,10 +41,10 @@ public enum IDType {
      * 4	414	普通护照
      */
 
-    RESIDENT_IDENTITY_CARD("111","居民身份证"),
-    OFFICER_ID("114","军官证"),
-    POLICE_OFFICER_CARD("123","警官证"),
-    ORDINARY_PASSPORT("414","普通护照");
+    RESIDENT_IDENTITY_CARD("111", "居民身份证"),
+    OFFICER_ID("114", "军官证"),
+    POLICE_OFFICER_CARD("123", "警官证"),
+    ORDINARY_PASSPORT("414", "普通护照");
 
 
     @JsonValue

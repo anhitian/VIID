@@ -47,15 +47,15 @@ public enum DispositionRangeType {
      * 9	9	卡口
      */
 
-    PREFECTURE("1","县内（含县级市）"),
-    CROSS_COUNTY("2","跨县"),
-    CITY("3","市内"),
-    INTERCITY("4","跨市"),
-    PROVINCE("5","省内"),
-    INTERPROVINCIAL("6","跨省"),
-    NATIONWIDE("7","全国"),
-    CROSS_BORDER("8","跨境"),
-    BAYONET("9","卡口");
+    PREFECTURE("1", "县内（含县级市）"),
+    CROSS_COUNTY("2", "跨县"),
+    CITY("3", "市内"),
+    INTERCITY("4", "跨市"),
+    PROVINCE("5", "省内"),
+    INTERPROVINCIAL("6", "跨省"),
+    NATIONWIDE("7", "全国"),
+    CROSS_BORDER("8", "跨境"),
+    BAYONET("9", "卡口");
 
 
     @JsonValue

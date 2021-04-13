@@ -50,19 +50,19 @@ public enum VideoFormatType {
      * 13	Other	其他
      */
 
-    MPG("Mpg","MPG"),
-    MOV("Mov","MOV"),
-    AVI("Avi","AVI"),
-    RM("Rm","RM"),
-    RMVB("Rmvb","RMVB"),
-    FLV("Flv","FLV"),
-    VOB("Vob","VOB"),
-    M2TS("M2ts","M2TS"),
-    MP4("Mp4","MP4"),
-    ES("Es","ES"),
-    PS("Ps","PS"),
-    TS("Ts","TS文件"),
-    OTHER("Other","其他");
+    MPG("Mpg", "MPG"),
+    MOV("Mov", "MOV"),
+    AVI("Avi", "AVI"),
+    RM("Rm", "RM"),
+    RMVB("Rmvb", "RMVB"),
+    FLV("Flv", "FLV"),
+    VOB("Vob", "VOB"),
+    M2TS("M2ts", "M2TS"),
+    MP4("Mp4", "MP4"),
+    ES("Es", "ES"),
+    PS("Ps", "PS"),
+    TS("Ts", "TS文件"),
+    OTHER("Other", "其他");
 
 
     @JsonValue

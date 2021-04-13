@@ -51,7 +51,7 @@ public enum VideoCodeFormatType {
     H263("6", "H.263"),
     H265("7", "H.265"),
     OTHER("99", "其他");
-    
+
     @JsonValue
     @EnumValue
     private final String code;

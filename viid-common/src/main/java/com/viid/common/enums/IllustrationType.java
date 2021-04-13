@@ -44,11 +44,11 @@ public enum IllustrationType {
      */
 
 
-    FLOOR_PLAN("1","平面图"),
-    STEREOGRAM("2","立体图"),
-    SIDE_VIEW("3","侧面图"),
-    AERIAL_VIEW("4","鸟瞰图"),
-    OTHER("99","其他");
+    FLOOR_PLAN("1", "平面图"),
+    STEREOGRAM("2", "立体图"),
+    SIDE_VIEW("3", "侧面图"),
+    AERIAL_VIEW("4", "鸟瞰图"),
+    OTHER("99", "其他");
 
 
     @JsonValue

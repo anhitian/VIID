@@ -38,9 +38,9 @@ public enum IlluminationType {
      * 2	2	灯光
      * 3	3	火光
      */
-    NATURAL_LIGHT("1","自然光"),
-    LIGHT("2","灯光"),
-    FIRELIGHT("3","火光");
+    NATURAL_LIGHT("1", "自然光"),
+    LIGHT("2", "灯光"),
+    FIRELIGHT("3", "火光");
 
 
     @JsonValue

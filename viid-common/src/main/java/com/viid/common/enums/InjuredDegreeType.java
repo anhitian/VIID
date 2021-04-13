@@ -40,11 +40,11 @@ public enum InjuredDegreeType {
      * 5	9	其他
      */
 
-    DEATH("1","死亡"),
-    SERIOUSLY_INJURED("2","重伤"),
-    MINOR_INJURIES("3","轻伤"),
-    MINOR_INJURY("4","轻微伤"),
-    OTHER("9","其他");
+    DEATH("1", "死亡"),
+    SERIOUSLY_INJURED("2", "重伤"),
+    MINOR_INJURIES("3", "轻伤"),
+    MINOR_INJURY("4", "轻微伤"),
+    OTHER("9", "其他");
 
     @JsonValue
     @EnumValue

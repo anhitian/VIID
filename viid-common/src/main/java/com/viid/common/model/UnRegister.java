@@ -21,7 +21,6 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 
 /**
@@ -40,6 +39,7 @@ public class UnRegister {
     /**
      * 设备或系统ID
      * 中心编码（8位）+行业编码（2位）+类型编码（3位）+序号（7位）
+     *
      * @required
      * @mock 31000051511191250218
      * @since 0.1.0

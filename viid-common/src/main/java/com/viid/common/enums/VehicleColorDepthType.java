@@ -38,8 +38,8 @@ public enum VehicleColorDepthType {
      * 1	0	深
      * 2	1	浅
      */
-    DARK("0","深"),
-    LIGHT("1","浅");
+    DARK("0", "深"),
+    LIGHT("1", "浅");
 
     @JsonValue
     @EnumValue
