@@ -63,6 +63,8 @@ allprojects {
         }
     }
 
+
+
 }
 
 
@@ -70,6 +72,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'jacoco'
     apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
     apply plugin: 'com.github.shalousun.smart-doc'
     sourceCompatibility = '11'
 
@@ -93,19 +96,19 @@ subprojects {
     }
 
     configurations {
-        providedRuntime
         implementation.exclude module: "spring-boot-starter-tomcat"
 
-        compileOnly {
-            extendsFrom annotationProcessor
-        }
+//        compileOnly {
+//            extendsFrom annotationProcessor
+//        }
     }
+
+    compileJava.dependsOn(processResources)
 
     dependencies {
 
         // instead of tomcat
         implementation 'org.springframework.boot:spring-boot-starter-undertow'
-
         compileOnly "org.projectlombok:lombok:${lombokVersion}"
         annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
         testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
@@ -114,8 +117,6 @@ subprojects {
         testImplementation('org.springframework.boot:spring-boot-starter-test') {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         }
-
-
         testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}"
         testImplementation "org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}"
         testImplementation "org.junit.platform:junit-platform-launcher:${junitPlatformLauncherVersion}"

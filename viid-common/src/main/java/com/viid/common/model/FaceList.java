@@ -14,21 +14,35 @@
  * limitations under the License.
  */
 
-package com.viid.common.constant;
+package com.viid.common.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.Data;
+
+import java.util.List;
 
 /**
- * ViidConstants
+ * FaceList
+ * 人脸集合对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/11
+ * @date 2021/4/14
  * @since 0.1.0
  **/
-public interface ViidConstants {
+@Data
+@JsonRootName("FaceListObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class FaceList {
 
     /**
-     * 1400 时间格式format
+     * 人脸集合
+     *
+     * @mock
+     * @since 0.1.0
      */
-    String DATE_TIME_FORMATTER_PATTERN = "yyyyMMddHHmmss";
-    String CONSUME_CONTENT_TYPE="application/VIID+JSON";
+    @JsonProperty(value = "FaceObject")
+    public List<Face> faceObject;
 }
