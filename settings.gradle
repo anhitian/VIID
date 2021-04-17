@@ -3,10 +3,12 @@ pluginManagement {
     repositories {
         maven { url "https://plugins.gradle.org/m2/" }
         maven { url 'https://repo.spring.io/milestone' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         gradlePluginPortal()
     }
 
     plugins {
+        id "com.github.shalousun.smart-doc" version "${smartDocVersion}"
         id 'org.springframework.boot' version "${springBootVersion}"
         id 'com.google.cloud.tools.jib' version "${jibPluginVersion}"
         id 'com.gorylenko.gradle-git-properties' version "${gitPropertiesPluginVersion}"
@@ -17,3 +19,4 @@ pluginManagement {
 }
 
 rootProject.name = 'viid'
+include("viid-common")

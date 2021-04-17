@@ -1,0 +1,17 @@
+description 'viid common module'
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+  compileOnly "org.springframework.boot:spring-boot-starter-web"
+  compileOnly 'com.baomidou:mybatis-plus-boot-starter'
+  compileOnly 'org.springframework.boot:spring-boot-starter-validation'
+  compileOnly 'commons-io:commons-io'
+  compileOnly 'com.google.guava:guava'
+  compileOnly 'org.apache.commons:commons-lang3'
+  compileOnly 'org.redisson:redisson-spring-boot-starter'
+}
+
+jar{
+  enabled=true
+}

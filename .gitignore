@@ -126,3 +126,4 @@ nbdist/
 .nb-gradle/
 
 **/gradle/
+docker/mysql/

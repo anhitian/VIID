@@ -37,5 +37,3 @@
 ## 开源协议
 
 VIID 开源软件遵循[Apache 2.0 协议](https://www.apache.org/licenses/LICENSE-2.0.html)。允许商业使用，但务必保留类作者、Copyright 信息。
-
-![](https://gitee.com/pig4cloud/oss/raw/master/2020-10-9/1602229452602-image.png)
