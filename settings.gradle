@@ -3,7 +3,7 @@ pluginManagement {
     repositories {
         maven { url "https://plugins.gradle.org/m2/" }
         maven { url 'https://repo.spring.io/milestone' }
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         gradlePluginPortal()
     }
 
@@ -20,3 +20,6 @@ pluginManagement {
 
 rootProject.name = 'viid'
 include("viid-common")
+include("viid-server")
+include("viid-upms:viid-upms-api")
+include("viid-upms:viid-upms-biz")

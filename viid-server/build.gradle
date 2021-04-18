@@ -1,0 +1,20 @@
+description 'viid biz module'
+
+dependencies {
+    implementation project(':viid-common')
+    implementation project(':viid-upms:viid-upms-api')
+    implementation 'cn.hutool:hutool-all'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+}
