@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.viid.upms.api.feign.fallback.SystemFeignFallback,\
+  com.viid.upms.api.feign.factory.SystemFeignFallbackFactory
