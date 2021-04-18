@@ -4,6 +4,8 @@ dependencies {
     implementation project(':viid-common')
     implementation project(':viid-upms:viid-upms-api')
     implementation 'cn.hutool:hutool-all'
+    implementation 'com.squareup.okhttp3:okhttp'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -14,7 +16,5 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     testImplementation 'org.springframework.security:spring-security-test'
-
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
 }

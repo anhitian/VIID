@@ -2,6 +2,7 @@ package com.viid.upms.biz.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.viid.upms.api.entity.System;
+import org.springframework.stereotype.Component;
 
 /**
  * SystemService

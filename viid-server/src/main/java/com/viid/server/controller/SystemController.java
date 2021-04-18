@@ -108,7 +108,16 @@ public class SystemController {
     public ResponseStatusDTO register(HttpServletRequest request,
                                       @Valid @RequestBody KeepAliveDTO keepAliveDTO) {
         String requestUri = request.getRequestURI();
-        return ResponseStatusDTO.ok(keepAliveDTO.getDeviceId(), requestUri);
+        R<System> systemResult = systemFeign.getSystemByDeviceId(keepAliveDTO.getDeviceId());
+        if(systemResult.getCode()==0){
+            return ResponseStatusDTO.ok(keepAliveDTO.getDeviceId(), requestUri);
+        }
+        return ResponseStatusDTO.builder()
+                .statusCode(-1)
+                .statusString("not register")
+                .requestUrl(requestUri)
+                .localTime(LocalDateTime.now())
+                .build();
     }
 
     /**

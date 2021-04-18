@@ -1,8 +1,10 @@
 package com.viid.upms.api.feign;
 
 import com.viid.common.base.R;
+
 import com.viid.upms.api.feign.factory.SystemFeignFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
+
 import org.springframework.web.bind.annotation.*;
 import com.viid.upms.api.entity.System;
 import java.util.List;
@@ -15,7 +17,7 @@ import java.util.List;
  * @date 2021/4/18
  * @since 0.1.0
  **/
-@FeignClient(value = "viid-upms-biz",fallbackFactory = SystemFeignFallbackFactory.class)
+@FeignClient(value = "viid-upms-biz",path = "/api/system",fallbackFactory = SystemFeignFallbackFactory.class)
 public interface SystemFeign {
 
     /**
