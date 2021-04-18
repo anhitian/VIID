@@ -14,33 +14,15 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
-import lombok.Data;
-
-import java.util.List;
+package com.viid.server.controller;
 
 /**
- * SubImageInfoList
- * 子图像信息对象集合
+ * MotorVehicleController
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/14
  * @since 0.1.0
  **/
-@Data
-@JsonRootName("SubImageInfoListObject")
-public class SubImageInfoList {
-
-    /**
-     * 子图像信息集合
-     *
-     * @mock
-     * @since 0.1.0
-     */
-    @JsonProperty(value = "SubImageInfoObject")
-    private List<SubImageInfo> subImageInfoObject;
+public class MotorVehicleController {
 }

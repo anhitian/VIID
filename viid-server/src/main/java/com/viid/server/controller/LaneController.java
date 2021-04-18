@@ -14,26 +14,15 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonRootName;
-import lombok.Data;
+package com.viid.server.controller;
 
 /**
- * Person
- * 人员对象
+ * LaneController
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021-04-08 02:58
+ * @date 2021/4/14
  * @since 0.1.0
  **/
-
-@Data
-@JsonRootName("PersonObject")
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Person {
-
-
+public class LaneController {
 }
