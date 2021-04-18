@@ -14,36 +14,46 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
-import java.util.List;
+import javax.validation.constraints.NotEmpty;
 
 /**
- * ApsStatusList
- * 采集系统集合对象
+ * KeepAlive
+ * 保活对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/10
+ * @date 2021/4/9
  * @since 0.1.0
  **/
 
 @Data
-@JsonRootName("APSStatusListObject")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("KeepaliveObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ApsStatusList {
+public class KeepAliveDTO {
 
     /**
-     * 采集系统状态集合
+     * 设备或系统ID
      *
-     * @mock
+     * @required
+     * @mock 31000051511191250218
      * @since 0.1.0
      */
-    @JsonProperty(value = "APSStatusObject")
-    private List<ApsStatus> apsStatuses;
+    @JsonProperty(value = "DeviceID")
+    @NotEmpty
+    @Length(max = 20, min = 20)
+    private String deviceId;
 }

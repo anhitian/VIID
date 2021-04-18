@@ -14,59 +14,42 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 /**
- * ApsStatus
- * 采集系统状态对象
+ * ApeStatusList
+ * 采集设备状态集合对象
  *
  * @author qian.he
  * @version 0.1.0
  * @date 2021/4/10
  * @since 0.1.0
  **/
+
 @Data
-@JsonRootName("APSStatusObject")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("APEStatusListObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ApsStatus {
+public class ApeStatusListDTO {
 
     /**
-     * 设备ID
+     * 采集设备状态集合
      *
-     * @required
-     * @mock 31000051511191250218
-     * @since 0.1.0
-     */
-    @JsonProperty(value = "ApsID")
-    private String apsID;
-
-
-    /**
-     * 是否在线
-     *
-     * @required
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "IsOnline")
-    private String isOnline;
-
-
-    /**
-     * 当前时间
-     *
-     * @required
-     * @mock
-     * @since 0.1.0
-     */
-    @JsonProperty(value = "CurrentTime")
-    private LocalDateTime currentTime;
-
+    @JsonProperty(value = "APEStatusObject")
+    private List<ApeStatusDTO> apeStatusList;
 }

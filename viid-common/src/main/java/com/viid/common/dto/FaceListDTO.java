@@ -14,40 +14,42 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
+import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 /**
- * Register
- * 注册对象
+ * FaceList
+ * 人脸集合对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/14
  * @since 0.1.0
  **/
 
 @Data
-@JsonRootName("RegisterObject")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("FaceListObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Register {
+public class FaceListDTO {
 
     /**
-     * 设备或系统ID
+     * 人脸集合
      *
-     * @required
-     * @mock 31000051511191250218
+     * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "DeviceID")
-    @NotEmpty
-    @Length(max = 20, min = 20)
-    private String deviceID;
+    @JsonProperty(value = "FaceObject")
+    public List<FaceDTO> faceList;
 }

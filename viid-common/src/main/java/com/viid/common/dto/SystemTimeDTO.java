@@ -14,85 +14,76 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import com.viid.common.enums.TimeCorrectModeType;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 /**
- * ResponseStatus
- * 返回状态
+ * SystemTime
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/10
  * @since 0.1.0
  **/
-@Data
-@JsonRootName("ResponseStatusObject")
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class ResponseStatus {
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("SystemTimeObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class SystemTimeDTO {
     /**
-     * id编号
+     * 服务器标示符
+     * 20位数字
+     * 视图库的唯一标识符，相同视图库在不同环境中，标识符值仍然一致
      *
+     * @required
      * @mock 31000051511191250218
      * @since 0.1.0
      */
-    @JsonProperty(value = "Id")
-    private String id;
+    @JsonProperty("VIIDServerID")
+    private String viidServerId;
+
 
     /**
-     * 请求
+     * 校时模式
      *
      * @required
-     * @mock /VIID/System/Register
+     * @mock 1
      * @since 0.1.0
      */
-    @JsonProperty(value = "RequestURL")
-    private String requestURL;
+    @JsonProperty("TimeMode")
+    private TimeCorrectModeType timeMode;
 
     /**
-     * 当地时间
+     * 日期时间
      *
-     * @mock 20190312155033
+     * @required
+     * @mock 20190319103155
      * @since 0.1.0
      */
-    @JsonProperty(value = "LocalTime")
+    @JsonProperty("LocalTime")
     private LocalDateTime localTime;
 
+
     /**
-     * 状态码
+     * 时区
      *
      * @required
-     * @mock 0
+     * @mock Asia/Shanghai
      * @since 0.1.0
      */
-    @JsonProperty(value = "StatusCode")
-    private Integer statusCode;
-
-    /**
-     * 状态信息
-     *
-     * @mock ok
-     * @since 0.1.0
-     */
-    @JsonProperty(value = "StatusString")
-    private String statusString;
-
-
-    public static ResponseStatus ok(String id, String requestURL) {
-        ResponseStatus responseStatus = new ResponseStatus();
-        responseStatus.setId(id);
-        responseStatus.setRequestURL(requestURL);
-        responseStatus.setLocalTime(LocalDateTime.now());
-        responseStatus.setStatusCode(0);
-        responseStatus.setStatusString("");
-        return responseStatus;
-    }
-
+    @JsonProperty("TimeZone")
+    private String timeZone;
 }

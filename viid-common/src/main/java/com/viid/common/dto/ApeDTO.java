@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Ape
@@ -32,9 +35,12 @@ import lombok.Data;
  **/
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonRootName("APEObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Ape {
+public class ApeDTO {
 
     /**
      * 设备ID

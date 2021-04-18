@@ -14,37 +14,41 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 /**
- * ApeList
- * 采集设备集合对象
+ * FeatureInfoList
+ * 特征值集合对象
  *
  * @author qian.he
- * @version 0.1.0
+ * @version 1.0
  * @date 2021/4/9
- * @since 0.1.0
+ * @since 1.0
  **/
 
 @Data
-@JsonRootName("APEListObject")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("FeatureInfoListObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ApeList {
-
-
+public class FeatureInfoListDTO {
     /**
-     * 采集设备集合
+     * 特征值集合
      *
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "APEObject")
-    private List<Ape> apes;
+    @JsonProperty(value = "FeatureInfoObject")
+    private List<FeatureInfoDTO> featureInfoList;
 }

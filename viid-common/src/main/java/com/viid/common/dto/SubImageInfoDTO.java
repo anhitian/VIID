@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -33,8 +37,12 @@ import java.time.LocalDateTime;
  **/
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonRootName("SubImageInfoObject")
-public class SubImageInfo {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class SubImageInfoDTO {
 
     /**
      * 图片base64数据

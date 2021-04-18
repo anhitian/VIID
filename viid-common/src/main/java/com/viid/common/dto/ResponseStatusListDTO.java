@@ -14,34 +14,43 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 /**
- * FeatureInfoList
- * 特征值集合对象
+ * ResponseStatusListObject
+ * 返回状态集合对象
  *
  * @author qian.he
- * @version 1.0
+ * @version 0.1.0
  * @date 2021/4/9
- * @since 1.0
+ * @since 0.1.0
  **/
+
 @Data
-@JsonRootName("FeatureInfoListObject")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("ResponseStatusListObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class FeatureInfoList {
+public class ResponseStatusListDTO {
+
+
     /**
-     * 特征值集合
+     * 返回状态对象集合
      *
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "FeatureInfoObject")
-    private List<FeatureInfo> featureInfoObject;
+    @JsonProperty(value = "ResponseStatusObject")
+    private List<ResponseStatusDTO> responseStatusList;
 }
