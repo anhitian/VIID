@@ -14,64 +14,43 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 /**
- * FeatureInfo
- * 特征值对象
+ * ApeList
+ * 采集设备集合对象
  *
  * @author qian.he
- * @version 1.0
+ * @version 0.1.0
  * @date 2021/4/9
- * @since 1.0
+ * @since 0.1.0
  **/
+
 @Data
-@JsonRootName("FeatureInfoObject")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("APEListObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class FeatureInfo {
+public class ApeListDTO {
 
 
     /**
-     * 算法版本
+     * 采集设备集合
      *
      * @mock
      * @since 0.1.0
      */
-    @JsonProperty(value = "AlgorithmVersion")
-    private String algorithmVersion;
-
-
-    /**
-     * 特征值数据
-     *
-     * @mock
-     * @since 0.1.0
-     */
-    @JsonProperty(value = "FeatureData")
-    private String featureData;
-
-
-    /**
-     * 特征值ID
-     *
-     * @mock
-     * @since 0.1.0
-     */
-    @JsonProperty(value = "FeatureID")
-    private String featureID;
-
-
-    /**
-     * 厂商
-     *
-     * @mock
-     * @since 0.1.0
-     */
-    @JsonProperty(value = "Vendor")
-    private String vendor;
+    @JsonProperty(value = "APEObject")
+    private List<ApeDTO> apeList;
 }

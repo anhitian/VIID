@@ -14,70 +14,71 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
-import com.viid.common.enums.TimeCorrectModeType;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-
-import java.time.LocalDateTime;
+import lombok.NoArgsConstructor;
 
 /**
- * SystemTime
+ * Person
+ * 人员对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/10
+ * @date 2021-04-08 02:58
  * @since 0.1.0
  **/
 
 @Data
 @Builder
-@JsonRootName("SystemTimeObject")
-public class SystemTime {
-    /**
-     * 服务器标示符
-     * 20位数字
-     * 视图库的唯一标识符，相同视图库在不同环境中，标识符值仍然一致
-     *
-     * @required
-     * @mock 31000051511191250218
-     * @since 0.1.0
-     */
-    @JsonProperty("VIIDServerID")
-    private String viidServerId;
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("PersonObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class PersonDTO {
 
 
     /**
-     * 校时模式
+     * 同行人数
      *
-     * @required
-     * @mock 1
+     * @mock 0
      * @since 0.1.0
      */
-    @JsonProperty("TimeMode")
-    private TimeCorrectModeType timeMode;
-
-    /**
-     * 日期时间
-     *
-     * @required
-     * @mock 20190319103155
-     * @since 0.1.0
-     */
-    @JsonProperty("LocalTime")
-    private LocalDateTime localTime;
+    @JsonProperty(value = "AccompanyNumber")
+    private Integer accompanyNumber;
 
 
     /**
-     * 时区
+     * 年龄下限
      *
-     * @required
-     * @mock Asia/Shanghai
+     * @mock 0
      * @since 0.1.0
      */
-    @JsonProperty("TimeZone")
-    private String timeZone;
+    @JsonProperty(value = "AgeLowerLimit")
+    private Integer ageLowerLimit;
+
+
+    /**
+     * 年龄上限
+     *
+     * @mock 0
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "AgeUpLimit")
+    private Integer ageUpLimit;
+
+
+    /**
+     * 绰号
+     *
+     * @mock 0
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "Alias")
+    private String alias;
 }

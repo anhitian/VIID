@@ -14,36 +14,47 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
-import java.util.List;
+import javax.validation.constraints.NotEmpty;
 
 /**
- * CaseInfoList
- * 案事件集合对象
+ * UnRegister
+ * 注销对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/10
+ * @date 2021/4/9
  * @since 0.1.0
  **/
 
 @Data
-@JsonRootName("CaseInfoListObject")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("UnRegisterObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CaseInfoList {
+public class UnRegisterDTO {
 
     /**
-     * 案事件对象集合
+     * 设备或系统ID
+     * 中心编码（8位）+行业编码（2位）+类型编码（3位）+序号（7位）
      *
-     * @mock
+     * @required
+     * @mock 31000051511191250218
      * @since 0.1.0
      */
-    @JsonProperty(value = "CaseInfoObject")
-    private List<CaseInfo> caseInfos;
+    @JsonProperty(value = "DeviceID")
+    @NotEmpty
+    @Length(max = 20, min = 20)
+    private String deviceId;
 }

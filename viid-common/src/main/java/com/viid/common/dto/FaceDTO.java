@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -35,9 +38,12 @@ import java.util.Date;
  **/
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonRootName("FaceObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Face {
+public class FaceDTO {
 
     /**
      * 人脸标示
@@ -701,7 +707,7 @@ public class Face {
      * @since 0.1.0
      */
     @JsonProperty(value = "FeatureList")
-    private FeatureInfoList featureList;
+    private FeatureInfoListDTO featureList;
 
 
     /**
@@ -711,7 +717,7 @@ public class Face {
      * @since 0.1.0
      */
     @JsonProperty(value = "SubImageList")
-    private SubImageInfoList subImageList;
+    private SubImageInfoListDTO subImageList;
 
 
     /**

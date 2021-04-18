@@ -14,38 +14,66 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
+import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotEmpty;
+import java.time.LocalDateTime;
 
 /**
- * UnRegister
- * 注销对象
+ * ApsStatus
+ * 采集系统状态对象
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/9
+ * @date 2021/4/10
  * @since 0.1.0
  **/
+
 @Data
-@JsonRootName("UnRegisterObject")
-public class UnRegister {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonRootName("APSStatusObject")
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ApsStatusDTO {
 
     /**
-     * 设备或系统ID
-     * 中心编码（8位）+行业编码（2位）+类型编码（3位）+序号（7位）
+     * 设备ID
      *
      * @required
      * @mock 31000051511191250218
      * @since 0.1.0
      */
-    @JsonProperty(value = "DeviceID")
-    @NotEmpty
-    @Length(max = 20, min = 20)
-    private String deviceID;
+    @JsonProperty(value = "ApsID")
+    private String apsId;
+
+
+    /**
+     * 是否在线
+     *
+     * @required
+     * @mock
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "IsOnline")
+    private String isOnline;
+
+
+    /**
+     * 当前时间
+     *
+     * @required
+     * @mock
+     * @since 0.1.0
+     */
+    @JsonProperty(value = "CurrentTime")
+    private LocalDateTime currentTime;
+
 }

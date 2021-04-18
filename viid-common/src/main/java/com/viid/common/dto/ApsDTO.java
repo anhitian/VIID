@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Aps
@@ -30,10 +33,14 @@ import lombok.Data;
  * @date 2021/4/10
  * @since 0.1.0
  **/
+
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonRootName("APSObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Aps {
+public class ApsDTO {
     /**
      * 设备ID
      *

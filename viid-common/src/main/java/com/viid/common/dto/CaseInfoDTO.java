@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
-package com.viid.common.model;
+package com.viid.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * CaseInfo
@@ -32,9 +35,12 @@ import lombok.Data;
  **/
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonRootName("CaseInfoObject")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CaseInfo {
+public class CaseInfoDTO {
 
     /**
      * 案事件标识
