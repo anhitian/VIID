@@ -33,6 +33,7 @@ public class ViidClient implements InitializingBean , DisposableBean {
 
     private final ViidClientProperties viidClientProperties;
 
+
     public ViidClient(ViidClientProperties viidClientProperties) {
         this.viidClientProperties = viidClientProperties;
     }

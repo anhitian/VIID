@@ -17,12 +17,13 @@
 package com.viid.client.config;
 
 import com.viid.client.ViidClient;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 /**
  * @author qian.he
@@ -36,10 +37,18 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(value = {ViidClientProperties.class})
 public class ViidAutoConfiguration {
 
+
     @Bean
     @ConditionalOnMissingBean(value = {ViidClient.class})
-
-    public ViidClient viidClient(ViidClientProperties viidClientProperties){
+    public ViidClient viidClient(ViidClientProperties viidClientProperties,List<ViidClientConfigurationCustomizer> viidClientConfigurationCustomizers){
+        if (viidClientConfigurationCustomizers != null) {
+            for (ViidClientConfigurationCustomizer customizer : viidClientConfigurationCustomizers) {
+                customizer.customize(viidClientProperties);
+            }
+        }
         return new ViidClient(viidClientProperties);
     }
+
+
+
 }
