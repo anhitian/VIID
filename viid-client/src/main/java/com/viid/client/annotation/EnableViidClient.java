@@ -16,11 +16,20 @@
 
 package com.viid.client.annotation;
 
+import com.viid.client.config.ViidAutoConfiguration;
+import org.springframework.context.annotation.Import;
+
+import java.lang.annotation.*;
+
 /**
  * @author qian.he
  * @version 0.1.0
  * @date 2021-04-08 23:59
  * @since 0.1.0
  **/
+@Documented
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Import(ViidAutoConfiguration.class)
 public @interface EnableViidClient {
 }

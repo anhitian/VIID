@@ -17,6 +17,9 @@
 package com.viid.client;
 
 import com.viid.client.config.ViidClientProperties;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * @author qian.he
@@ -24,7 +27,9 @@ import com.viid.client.config.ViidClientProperties;
  * @date 2021-04-09 00:00
  * @since 0.1.0
  **/
-public class ViidClient {
+
+@Slf4j
+public class ViidClient implements InitializingBean , DisposableBean {
 
     private final ViidClientProperties viidClientProperties;
 
@@ -32,4 +37,17 @@ public class ViidClient {
         this.viidClientProperties = viidClientProperties;
     }
 
+    @Override
+    public void destroy() throws Exception {
+        if(log.isDebugEnabled()){
+            log.debug("viid client create,:{}",viidClientProperties);
+        }
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        if(log.isDebugEnabled()){
+            log.debug("viid client destroy,:{}",viidClientProperties);
+        }
+    }
 }

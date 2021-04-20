@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
  * @since 0.1.0
  **/
 @Data
-@Component
 @ConfigurationProperties(prefix = "viid-client")
 public class ViidClientProperties {
 
