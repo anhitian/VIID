@@ -9,6 +9,8 @@ dependencies {
   compileOnly 'commons-io:commons-io'
   compileOnly 'com.google.guava:guava'
   compileOnly 'org.apache.commons:commons-lang3'
+  compileOnly 'com.squareup.okhttp3:okhttp'
+  compileOnly ' com.squareup.okhttp3:logging-interceptor'
   compileOnly 'org.redisson:redisson-spring-boot-starter'
 }
 
