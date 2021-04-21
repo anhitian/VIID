@@ -20,6 +20,7 @@ import com.viid.client.ViidClient;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.client.RestTemplateCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -40,7 +41,8 @@ public class ViidAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(value = {ViidClient.class})
-    public ViidClient viidClient(ViidClientProperties viidClientProperties,List<ViidClientConfigurationCustomizer> viidClientConfigurationCustomizers){
+    public ViidClient viidClient(ViidClientProperties viidClientProperties,
+                                 List<ViidClientConfigurationCustomizer> viidClientConfigurationCustomizers){
         if (viidClientConfigurationCustomizers != null) {
             for (ViidClientConfigurationCustomizer customizer : viidClientConfigurationCustomizers) {
                 customizer.customize(viidClientProperties);
@@ -48,7 +50,4 @@ public class ViidAutoConfiguration {
         }
         return new ViidClient(viidClientProperties);
     }
-
-
-
 }
