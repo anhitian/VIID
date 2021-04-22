@@ -5,6 +5,7 @@ import com.viid.common.annotation.NetworkInterceptor;
 import okhttp3.*;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -27,9 +28,9 @@ import java.util.concurrent.TimeUnit;
  * @date 2021/4/22
  * @since 0.1.0
  **/
-@SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass(OkHttpClient.class)
+@AutoConfigureBefore({OkHttpRestTemplateAutoConfiguration.class})
 @EnableConfigurationProperties(OkHttpProperties.class)
 public class OkHttpAutoConfiguration {
 
@@ -38,14 +39,14 @@ public class OkHttpAutoConfiguration {
 
     @Autowired
     private ObjectProvider<OkHttpConfigurer> configurers;
-
-    @Autowired
-    @ApplicationInterceptor
-    private ObjectProvider<Interceptor> applicationInterceptors;
-
-    @Autowired
-    @NetworkInterceptor
-    private ObjectProvider<Interceptor> networkInterceptors;
+//
+//    @Autowired
+//    @ApplicationInterceptor
+//    private ObjectProvider<Interceptor> applicationInterceptors;
+//
+//    @Autowired
+//    @NetworkInterceptor
+//    private ObjectProvider<Interceptor> networkInterceptors;
 
     @Bean
     @ConditionalOnMissingBean
@@ -74,8 +75,8 @@ public class OkHttpAutoConfiguration {
         builder.followSslRedirects(okHttpProperties.isFollowSslRedirects());
         builder.retryOnConnectionFailure(okHttpProperties.isRetryOnConnectionFailure());
 
-        applicationInterceptors.forEach(builder::addInterceptor);
-        networkInterceptors.forEach(builder::addNetworkInterceptor);
+//        applicationInterceptors.forEach(builder::addInterceptor);
+//        networkInterceptors.forEach(builder::addNetworkInterceptor);
         configurers.forEach(configurer -> configurer.configure(builder));
         //todo add ssl
 

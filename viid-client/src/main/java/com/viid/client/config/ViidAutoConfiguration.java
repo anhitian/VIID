@@ -17,9 +17,12 @@
 package com.viid.client.config;
 
 import com.viid.client.ViidClient;
+import com.viid.common.config.OkHttpRestTemplateAutoConfiguration;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.client.RestTemplateCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,9 +37,11 @@ import java.util.List;
  **/
 
 @Configuration
+@AutoConfigureAfter(OkHttpRestTemplateAutoConfiguration.class)
 @ConditionalOnClass(value = {ViidClient.class})
 @EnableConfigurationProperties(value = {ViidClientProperties.class})
 public class ViidAutoConfiguration {
+
 
 
     @Bean

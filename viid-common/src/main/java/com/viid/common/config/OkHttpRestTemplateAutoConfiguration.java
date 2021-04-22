@@ -33,6 +33,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplicat
 import org.springframework.boot.autoconfigure.condition.NoneNestedConditions;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.client.RestTemplateCustomizer;
@@ -43,18 +44,9 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.http.client.OkHttp3ClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
+
 import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
@@ -68,7 +60,7 @@ import java.util.stream.Collectors;
  **/
 @Slf4j
 @ConditionalOnClass({RestTemplateCustomizer.class, RestTemplate.class})
-@AutoConfigureBefore(OkHttpRestTemplateAutoConfiguration.class)
+@AutoConfigureBefore(RestTemplateAutoConfiguration.class)
 @AutoConfigureAfter(HttpMessageConvertersAutoConfiguration.class)
 @Conditional(OkHttpRestTemplateAutoConfiguration.NotReactiveWebApplicationCondition.class)
 @EnableConfigurationProperties({OkHttpProperties.class})

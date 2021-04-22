@@ -17,6 +17,7 @@
 package com.viid.client;
 
 import com.viid.client.config.ViidClientProperties;
+import com.viid.common.dto.RegisterDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -51,4 +52,10 @@ public class ViidClient implements InitializingBean , DisposableBean {
             log.debug("viid client destroy,:{}",viidClientProperties);
         }
     }
+
+
+    public void register(RegisterDTO registerDTO){
+
+    }
+
 }

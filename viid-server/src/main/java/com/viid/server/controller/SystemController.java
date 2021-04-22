@@ -72,8 +72,6 @@ public class SystemController {
         if(Objects.nonNull(systemResult) && systemResult.getCode()!=0){
             System system = System.builder()
                                     .deviceId(registerDTO.getDeviceId())
-                                    .createTime(LocalDateTime.now())
-                                    .updateTime(LocalDateTime.now())
                                     .build();
             systemFeign.addSystem(system);
         }

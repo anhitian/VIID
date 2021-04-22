@@ -1,15 +1,15 @@
-package com.viid.common.config;
+package com.viid.upms.biz.config;
 
 import org.springframework.context.annotation.Configuration;
 
 /**
- * FeignConfiguration
+ * MybatisPlusConfiguration
  *
  * @author qian.he
  * @version 0.1.0
- * @date 2021/4/22
+ * @date 2021/4/23
  * @since 0.1.0
  **/
 @Configuration
-public class FeignConfiguration {
+public class MybatisPlusConfiguration {
 }
