@@ -22,5 +22,7 @@ rootProject.name = 'viid'
 include("viid-common")
 include("viid-client")
 include("viid-server")
+include("viid-storage:viid-storage-api")
+include("viid-storage:viid-storage-service")
 include("viid-upms:viid-upms-api")
-include("viid-upms:viid-upms-biz")
+include("viid-upms:viid-upms-service")

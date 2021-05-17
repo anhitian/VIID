@@ -1,0 +1,8 @@
+dependencies {
+    implementation project(':viid-common')
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+}
+
+jar{
+    enabled=true
+}
