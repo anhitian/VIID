@@ -5,6 +5,10 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+import com.viid.common.constant.ViidConstants;
 import feign.Logger;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
@@ -17,6 +21,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.TimeZone;
 
 /**
  * FeignConfiguration
@@ -36,27 +45,31 @@ public class FeignConfiguration {
 
     @Bean
     public Decoder feignDecoder() {
-        MappingJackson2HttpMessageConverter jacksonConverter = new MappingJackson2HttpMessageConverter(objectMapper());
+        var jacksonConverter = new MappingJackson2HttpMessageConverter(objectMapper());
         ObjectFactory<HttpMessageConverters> objectFactory = () -> new HttpMessageConverters(jacksonConverter);
         return new ResponseEntityDecoder(new SpringDecoder(objectFactory));
     }
 
     @Bean
     public Encoder feignEncoder(){
-        MappingJackson2HttpMessageConverter jacksonConverter = new MappingJackson2HttpMessageConverter(objectMapper());
+        var jacksonConverter = new MappingJackson2HttpMessageConverter(objectMapper());
         ObjectFactory<HttpMessageConverters> objectFactory = () -> new HttpMessageConverters(jacksonConverter);
         return new SpringEncoder(objectFactory);
     }
 
     public ObjectMapper objectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
+        var mapper = new ObjectMapper();
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
         mapper.configure(JsonParser.Feature.IGNORE_UNDEFINED, true);
         mapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
-        mapper.findAndRegisterModules();
+        var javaTimeModule = new JavaTimeModule();
+        var dateTimeFormatter = DateTimeFormatter.ofPattern(ViidConstants.DATE_TIME_FORMATTER_PATTERN);
+        javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(dateTimeFormatter));
+        javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(dateTimeFormatter));
+        mapper.registerModule(javaTimeModule);
         return mapper;
     }
 }
