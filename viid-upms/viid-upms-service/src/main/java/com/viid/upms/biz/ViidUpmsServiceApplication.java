@@ -9,10 +9,10 @@ import org.springframework.cloud.client.SpringCloudApplication;
  */
 @MapperScan(basePackages = {"com.viid.upms.biz.mapper"})
 @SpringCloudApplication
-public class ViidUpmsBizApplication {
+public class ViidUpmsServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ViidUpmsBizApplication.class, args);
+        SpringApplication.run(ViidUpmsServiceApplication.class, args);
     }
 
 }
