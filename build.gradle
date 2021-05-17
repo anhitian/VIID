@@ -51,6 +51,7 @@ allprojects {
             dependency "commons-codec:commons-codec:${commonsCodecVersion}"
             dependency "org.apache.httpcomponents:httpclient:${httpclientVersion}"
             dependency "com.squareup.okhttp3:okhttp:${okhttpVersion}"
+            dependency "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}"
             dependency "io.minio:minio:${minioVersion}"
         }
     }

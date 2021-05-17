@@ -20,6 +20,7 @@ pluginManagement {
 
 rootProject.name = 'viid'
 include("viid-common")
+include("viid-client")
 include("viid-server")
 include("viid-upms:viid-upms-api")
 include("viid-upms:viid-upms-biz")

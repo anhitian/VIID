@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.viid.common.config.OkHttpAutoConfiguration,\
+  com.viid.common.config.OkHttpRestTemplateAutoConfiguration

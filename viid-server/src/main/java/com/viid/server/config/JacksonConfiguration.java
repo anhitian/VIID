@@ -42,8 +42,8 @@ public class JacksonConfiguration implements Jackson2ObjectMapperBuilderCustomiz
     @Override
     public void customize(Jackson2ObjectMapperBuilder jacksonObjectMapperBuilder) {
         jacksonObjectMapperBuilder.timeZone(TimeZone.getTimeZone(ZoneId.systemDefault()));
-        JavaTimeModule javaTimeModule = new JavaTimeModule();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(ViidConstants.DATE_TIME_FORMATTER_PATTERN);
+        var javaTimeModule = new JavaTimeModule();
+        var dateTimeFormatter = DateTimeFormatter.ofPattern(ViidConstants.DATE_TIME_FORMATTER_PATTERN);
         javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(dateTimeFormatter));
         javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(dateTimeFormatter));
         jacksonObjectMapperBuilder.modules(javaTimeModule);

@@ -9,7 +9,11 @@ dependencies {
   compileOnly 'commons-io:commons-io'
   compileOnly 'com.google.guava:guava'
   compileOnly 'org.apache.commons:commons-lang3'
+  implementation 'com.squareup.okhttp3:okhttp'
+  implementation 'com.squareup.okhttp3:logging-interceptor'
+  implementation 'io.github.openfeign:feign-okhttp'
   compileOnly 'org.redisson:redisson-spring-boot-starter'
+  compileOnly 'org.springframework.cloud:spring-cloud-starter-openfeign'
 }
 
 jar{
